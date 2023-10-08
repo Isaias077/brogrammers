@@ -6,26 +6,24 @@ class GenerateKeywordsUc {
             let resulted;
 
             const raw = JSON.stringify({
-                "model": "gpt-3.5-turbo",
-                "messages": [
-                    {
-                        "role": "user",
-                        "content": "Se necesita generar etiquetas generales para una base de datos basada en el siguiente texto sobre avances científicos en medicina regenerativa y clonación terapéutica. Además de palabras clave relacionadas con la ciencia y la medicina, también se deben considerar aspectos éticos y legales. Proporciona tres palabras clave, lo más generalistas posible, que reflejen tanto los avances científicos como los dilemas éticos involucrados en el texto a continuacion. Cada etiqueta debe constar de una sola palabra:"
-                    }
-                ]
-            });
+    "model": "gpt-3.5-turbo",
+    "messages": [ {
+    "role": "user", 
+    "content": "Se necesita generar etiquetas generales para una base de datos basada en el siguiente texto sobre avances científicos en medicina regenerativa y clonación terapéutica. Además de palabras clave relacionadas con la ciencia y la medicina, también se deben considerar aspectos éticos y legales. Proporciona tres palabras clave, lo más generalistas posible, que reflejen tanto los avances científicos como los dilemas éticos involucrados en el texto a continuacion. Cada etiqueta debe constar de una sola palabra:"
+    }]  
+});
 
             const requestOptions = {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",
-                    "Authorization": "Bearer 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"
+                    "Authorization": "Bearer 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"
                 },
                 body: raw,
                 redirect: 'follow'
             };
 
-            await fetch("http://api.openai.com/v1/chat/completions", requestOptions)
+            await fetch("https://api.openai.com/v1/chat/completions", requestOptions)
                 .then(response => response.text())
                 .then(result => {
                     console.log({result})
