@@ -18,6 +18,9 @@ class ProjectRepository {
     async create(payload) {
         return axios.post(`${url}/proyects`, payload)
     }
+    async createKeywords(payload) {
+        return axios.post('https://g5j3y3-3000.csb.app', payload)
+    }
 }
 
 export default ProjectRepository;

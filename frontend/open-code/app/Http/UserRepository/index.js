@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const url = 'https://6521d110a4199548356d95af.mockapi.io/api/v1/'
 
-class ProjectRepository {
+class UserRepository {
     async getOne(id){
         return axios.get(`${url}/users/${id}`)
     }
@@ -20,4 +20,4 @@ class ProjectRepository {
     }
 }
 
-export default ProjectRepository;
+export default UserRepository;
