@@ -15,6 +15,9 @@ class ProjectRepository {
     async updateOne(id) {
         return axios.put(`${url}/users/${id}`)
     }
+    async create(payload) {
+        return axios.post(`${url}/users`, payload)
+    }
 }
 
 export default ProjectRepository;
