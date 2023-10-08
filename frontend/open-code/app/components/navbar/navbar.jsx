@@ -15,7 +15,7 @@ import {
 } from "@nextui-org/react";
 import { AcmeLogo } from "./AcmeLogo.jsx";
 import Image from "next/image.js";
-import icon from "../../../public/images/busqueda.svg";
+import icon from "../../../public/images/usuario.svg";
 export default function NavBarComponent() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
