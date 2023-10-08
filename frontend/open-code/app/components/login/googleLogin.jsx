@@ -14,10 +14,12 @@ function GoogleLogin() {
   /**
    * Function that checks if user is exist in database
    */
-  const handleChangeToken = () => {
+  const handleChangeToken = (user) => {
     CheckUserExistence(1).then((r) => {
-      const res = JSON.parse(r.response);
+      
+      const res = r.response;
       localStorage.setItem("avatar", res.avatar);
+      console.log(user)
       user.picture = res.avatar;
     });
   };
