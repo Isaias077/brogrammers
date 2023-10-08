@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth0/auth0-react": "^2.2.1",
     "@nextui-org/react": "^2.1.13",
     "airbnb": "^0.0.2",
     "framer-motion": "^10.16.4",
