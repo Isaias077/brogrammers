@@ -1,7 +1,9 @@
+"use client"
 import React from "react";
+import {Spinner} from "@nextui-org/react";
 
 function notFound() {
-  return <div>not found</div>;
+  return <Spinner/>;
 }
 
 export default notFound;

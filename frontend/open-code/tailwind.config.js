@@ -34,5 +34,5 @@ module.exports = {
     },
   },
   darkMode: "class",
-  plugins: [nextui({ addCommonColors: true })],
+  plugins: [nextui({ addCommonColors: true }),require('@tailwindcss/forms')],
 };
