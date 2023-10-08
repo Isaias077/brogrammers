@@ -5,7 +5,7 @@ function ChipComponent() {
   return (
     <div className="flex gap-4">
       <Chip onClose={() => console.log("close")}>Chip</Chip>
-      <Chip onClose={() => console.log("close")} variant="bordered">
+      <Chip onClose={() => console.log("close")}>
         Chip
       </Chip>
     </div>

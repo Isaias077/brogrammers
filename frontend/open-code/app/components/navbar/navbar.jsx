@@ -20,16 +20,11 @@ export default function NavBarComponent() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
+    ["Home", "./"],
+    ["Proyects", "./proyects"],
+    ["Contributors", "./users"],
+    ["Sumbit Proyect", "./proyects/sumbit"],
+    ["Log In", "./users/login" ]
   ];
 
   return (
@@ -47,29 +42,32 @@ export default function NavBarComponent() {
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
-          <Link color="foreground" href="#">
-            Features
+          <Link color="foreground" href="./">
+            Home
           </Link>
         </NavbarItem>
         <NavbarItem isActive>
-          <Link href="#" aria-current="page">
-            Customers
+          <Link href="#" aria-current="./proyects">
+            Proyects
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
+          <Link color="foreground" href="./users">
+            Contributors
           </Link>
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
+          <Link href="./users/login">Login</Link>
         </NavbarItem>
         <NavbarItem>
+          <Link src="./users">
           <Button as={Link} className="bg-cyan-400" href="#" variant="flat">
             <Image src={icon} width={20} height={20} alt="search button" />
           </Button>
+          </Link>
+          
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>
@@ -84,10 +82,10 @@ export default function NavBarComponent() {
                   : "foreground"
               }
               className="w-full"
-              href="#"
+              href={item[1]}
               size="lg"
             >
-              {item}
+              {item[0]}
             </Link>
           </NavbarMenuItem>
         ))}
