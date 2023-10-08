@@ -1,0 +1,32 @@
+{
+  "name": "open-code",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@nextui-org/react": "^2.1.13",
+    "airbnb": "^0.0.2",
+    "framer-motion": "^10.16.4",
+    "next": "13.5.4",
+    "next-themes": "^0.2.1",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10",
+    "eslint": "^8.51.0",
+    "eslint-config-next": "13.5.4",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "postcss": "^8",
+    "prettier": "^3.0.3",
+    "tailwindcss": "^3"
+  }
+}
