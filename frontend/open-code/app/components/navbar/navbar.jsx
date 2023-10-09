@@ -47,7 +47,7 @@ export default function NavBarComponent() {
           </Link>
         </NavbarItem>
         <NavbarItem isActive>
-          <Link href="#" aria-current="./proyects">
+          <Link href="/proyects" aria-current="./proyects">
             Proyects
           </Link>
         </NavbarItem>
