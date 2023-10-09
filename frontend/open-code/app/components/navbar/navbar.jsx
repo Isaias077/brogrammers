@@ -60,6 +60,11 @@ export default function NavBarComponent() {
             Proyects
           </Link>
         </NavbarItem>
+        <NavbarItem isActive>
+          <Link href="/proyects/sumbit" aria-current="./proyects">
+            Sumbit Proyect
+          </Link>
+        </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="./users">
             Contributors
