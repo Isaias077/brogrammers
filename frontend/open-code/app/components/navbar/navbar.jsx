@@ -36,7 +36,7 @@ export default function NavBarComponent() {
         />
         <NavbarBrand>
           <AcmeLogo />
-          <p className="font-bold text-inherit">ACME</p>
+          <p className="font-bold text-inherit">SciUnity</p>
         </NavbarBrand>
       </NavbarContent>
 

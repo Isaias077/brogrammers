@@ -14,12 +14,7 @@ function proyects() {
         <ChipComponent />
         <ChipComponent />
       </div>
-      <div className="w-50 flex text-center justify-center flex-wrap flex-row gap-3">
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-      </div>
+     
     </div>
   );
 }
