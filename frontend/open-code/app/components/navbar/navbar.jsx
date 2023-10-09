@@ -16,7 +16,7 @@ import {
 import { AcmeLogo } from "./AcmeLogo.jsx";
 import Image from "next/image.js";
 import icon from "../../../public/images/usuario.svg";
-import {useSession} from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 
 export default function NavBarComponent() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -27,15 +27,15 @@ export default function NavBarComponent() {
     ["Proyects", "./proyects"],
     ["Contributors", "./users"],
     ["Sumbit Proyect", "./proyects/sumbit"],
-    ["Log In", "./users/login" ]
+    ["Log In", "./users/login"],
   ];
 
-  const {data: session} = useSession();
+  const { data: session } = useSession();
+  console.log(session);
+  // if (session?.user != undefined) {
+  //   setIsLogged(true);
+  // }
 
-  if(session) {
-    setIsLogged(true)
-  }
- 
   return (
     <Navbar onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent>
@@ -68,15 +68,20 @@ export default function NavBarComponent() {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link href="./users/login">Login</Link>
+          <Link href="./login">Login</Link>
         </NavbarItem>
         <NavbarItem>
+          {session ? <Button onClick={() => signOut()}>LogOut</Button> : <></>}
           <Link src="./login">
-          <Button as={Link} className="bg-cyan-400" href={isLogged ? './users/login' : './login'} variant="flat">
-            <Image src={icon} width={20} height={20} alt="login button" />
-          </Button>
+            <Button
+              as={Link}
+              className="bg-cyan-400"
+              href={session?.user ? "./users/login" : "./login"}
+              variant="flat"
+            >
+              <Image src={icon} width={20} height={20} alt="login button" />
+            </Button>
           </Link>
-          
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>
