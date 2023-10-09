@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   NavbarMenuToggle,
   NavbarMenu,
@@ -16,8 +16,11 @@ import {
 import { AcmeLogo } from "./AcmeLogo.jsx";
 import Image from "next/image.js";
 import icon from "../../../public/images/usuario.svg";
+import {useSession} from "next-auth/react";
+
 export default function NavBarComponent() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isLogged, setIsLogged] = React.useState(false);
 
   const menuItems = [
     ["Home", "./"],
@@ -27,6 +30,12 @@ export default function NavBarComponent() {
     ["Log In", "./users/login" ]
   ];
 
+  const {data: session} = useSession();
+
+  if(session) {
+    setIsLogged(true)
+  }
+ 
   return (
     <Navbar onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent>
@@ -62,9 +71,9 @@ export default function NavBarComponent() {
           <Link href="./users/login">Login</Link>
         </NavbarItem>
         <NavbarItem>
-          <Link src="./users">
-          <Button as={Link} className="bg-cyan-400" href="#" variant="flat">
-            <Image src={icon} width={20} height={20} alt="search button" />
+          <Link src="./login">
+          <Button as={Link} className="bg-cyan-400" href={isLogged ? './users/login' : './login'} variant="flat">
+            <Image src={icon} width={20} height={20} alt="login button" />
           </Button>
           </Link>
           
